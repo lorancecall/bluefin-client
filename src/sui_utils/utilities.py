@@ -157,8 +157,10 @@ def extract_enums(params: dict, enums: list):
         if i in params.keys():
             if type(params[i]) == list:
                 params[i] = [x.value for x in params[i]]
-            else:
+            elif type(params[i]) != str:
                 params[i] = params[i].value
+            else:
+                pass
     return params
 
 
